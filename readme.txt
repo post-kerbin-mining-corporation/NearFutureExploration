@@ -1,0 +1,42 @@
+v0.1.0
+------
+- Added 8 new probe cores
+ - Probodobodyne RND: 0.625m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne DSK: 1.25m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne CYL: 1.875m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne REKT: medium square probe core. Metal, Gold Foil, and Silver Foil variants. 
+ - Probodobodyne SQR: large square probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne STP: medum octagonal probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne CHFR: large octagonal probe core. Metal, Gold Foil, and Silver Foil variants.
+ - Probodobodyne PLTO: large tetrahedral probe core. Metal, Gold Foil, and Silver Foil variants.
+- Added probe buses - hollow structures
+ - ADPT-A: 0.625 to 1.25m cylindrical adapter bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - ADPT-B: 1.25m to 1.875m cylindrical adapter bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - OKTO: OKTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - QBE: QBE footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - HECS: HECS footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - HECS2 : HECS2 footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - RND: RND footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - DSK: DSK footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - CYL: CYL footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - REKT: REKT footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - SQR: SQR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - STP: STP footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - CHFR: CHFR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+ - PLTO: PLTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
+- Added probe-styled multipurpose fuel tanks
+ - 
+ -
+ -
+ -
+ - 1.875m-ish 
+ -
+ -
+ -
+
+- Added small satellite/lander parts
+ - Micro CMG: tiny reaction wheel
+ - Micro Landing Strut: tiny landing leg
+ - Micro Battery: tiny battery
+- Added antennae
+ - 
