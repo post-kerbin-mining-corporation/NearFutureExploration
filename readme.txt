@@ -25,15 +25,14 @@ v0.1.0
  - CHFR: CHFR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
  - PLTO: PLTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
 - Added probe-styled multipurpose fuel tanks
- - 
- -
- -
- -
- - 1.875m-ish 
- -
- -
- -
-
+ - Tiny radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - Tiny stack probe fuel tank: stores LFO, Mono, Xenon by default
+ - Small short radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - Small medium radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - Small long radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - 1.875m-ish short probe fuel tank: stores LFO, Mono, Xenon by default
+ - 1.875m-ish medium probe fuel tank: stores LFO, Mono, Xenon by default
+ - 1.875m-ish long probe fuel tank: stores LFO, Mono, Xenon by default
 - Added small satellite/lander parts
  - Micro CMG: tiny reaction wheel
  - Micro Landing Strut: tiny landing leg
