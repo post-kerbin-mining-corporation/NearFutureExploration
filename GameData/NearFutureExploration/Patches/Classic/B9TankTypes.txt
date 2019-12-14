@@ -1,0 +1,149 @@
+B9_TANK_TYPE
+{
+	name = NFEXHEX
+	tankMass = 0.00010627500
+	tankCost = 0.2
+
+	RESOURCE
+	{
+		name = Hexagen
+		unitsPerVolume = 1
+	}
+}
+B9_TANK_TYPE
+{
+	name = NFEXNIT
+	tankMass = 0.00010627500
+	tankCost = 0.2
+
+	RESOURCE
+	{
+		name = Nitronite
+		unitsPerVolume = 1
+	}
+}
+B9_TANK_TYPE
+{
+	name = NFEXPRM
+	tankMass = 0.00010627500
+	tankCost = 0.2
+
+	RESOURCE
+	{
+		name = PreciousMetals
+		unitsPerVolume = 1
+	}
+}
+B9_TANK_TYPE
+{
+	name = NFEXPLM
+	tankMass = 0.00010627500
+	tankCost = 0.2
+
+	RESOURCE
+	{
+		name = Propellium
+		unitsPerVolume = 15
+	}
+}
+B9_TANK_TYPE
+{
+	name = NFEXPLOX
+	tankMass = 0.000278904
+	tankCost = 0
+
+	RESOURCE
+	{
+		name = Propellium
+		unitsPerVolume = 7.5
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		unitsPerVolume = 0.5
+	}
+}
+
+B9_TANK_TYPE
+{
+	name = NFEXROCK
+	tankMass = 0.00010627500
+	tankCost = 0.2
+
+	RESOURCE
+	{
+		name = Rock
+		unitsPerVolume = 1
+	}
+}
+
+@PART[nfex-fueltank*]
+{
+	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[surfaceSwitch]]
+	{
+		@SUBTYPE[Xenon]
+		{
+			@primaryColor = Dark
+		}
+		+SUBTYPE[RCS]
+		{
+			@name = Hexagen
+			@title = #LOC_NFEX_Switcher_FuelTank_CSHEX
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSHEX_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSHEX_detail
+			@secondaryColor = Grapefruit
+			@tankType = NFEXHEX
+		}
+		+SUBTYPE[RCS]
+		{
+			@name = Nitronite
+			@title = #LOC_NFEX_Switcher_FuelTank_CSNIT
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSNIT_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSNIT_detail
+			@secondaryColor = DarkSkyBlue
+			@tankType = NFEXNIT
+		}
+		+SUBTYPE[Lithium]
+		{
+			@name = PreciousMetals
+			@title = #LOC_NFEX_Switcher_FuelTank_CSPRM
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSPRM_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSPRM_detail
+			@primaryColor = #cecece
+			@secondaryColor = LightPlum
+			@tankType = NFEXPRM
+		}
+		+SUBTYPE[Argon]
+		{
+			@name = Propellium
+			@title = #LOC_NFEX_Switcher_FuelTank_CSPLM
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSPLM_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSPLM_detail
+			@primaryColor = #999999
+			@secondaryColor = Lightblue
+			@tankType = NFEXPLM
+		}
+		+SUBTYPE[Argon]
+		{
+			@name = PropLox
+			@title = #LOC_NFEX_Switcher_FuelTank_CSPLOX
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSPLOX_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSPLOX_detail
+			@primaryColor = #999999
+			@secondaryColor = ResourceColorOxidizer
+			@tankType = NFEXPLOX
+		}
+		+SUBTYPE[Lithium]
+		{
+			@name = Rock
+			@title = #LOC_NFEX_Switcher_FuelTank_CSROCK
+			@descriptionSummary = #LOC_NFEX_Switcher_FuelTank_CSROCK_summary
+			@descriptionDetail = #LOC_NFEX_Switcher_FuelTank_CSROCK_detail
+			@primaryColor = #cecece
+			@secondaryColor = Desert
+			@tankType = NFEXROCK
+		}
+		!SUBTYPE[Argon] {}
+		!SUBTYPE[Lithium] {}
+	}
+}
