@@ -126,6 +126,13 @@ namespace NearFutureExploration
             Fields["TargetString"].guiActiveEditor = false;
           }
           
+        } 
+        else
+        {
+          if (lineRenderable)
+            renderedLine.SetVisibility(true);
+          renderedLine.AdjustSize(30f);
+          renderedLine.SetColor(badColor);
         }
       }
     }
@@ -160,9 +167,18 @@ namespace NearFutureExploration
       badColor = new Color(1f, 0f, 0f, .5f);
 
       renderedLine = new DebugLine(1f, badColor);
-      renderedLine.XForm.parent = part.partTransform;
-      renderedLine.XForm.localRotation = Quaternion.LookRotation(feedVector);
-      renderedLine.XForm.localPosition = feedOffset;
+      if (feedTransform)
+      {
+        renderedLine.XForm.parent = feedTransform;
+        renderedLine.XForm.localRotation = Quaternion.identity ;
+        renderedLine.XForm.localPosition = Vector3.zero;
+      }
+      else
+      {
+        renderedLine.XForm.parent = part.partTransform;
+        renderedLine.XForm.localRotation = Quaternion.LookRotation(feedVector);
+        renderedLine.XForm.localPosition = feedOffset;
+      }
       renderedLine.SetVisibility(lineRenderable);
     }
     void FindAntenna()
@@ -195,7 +211,7 @@ namespace NearFutureExploration
       LayerMask mask = 1 << LayerMask.NameToLayer("Default");
 
       // Cast the ray!
-      RaycastHit[] hits = Physics.RaycastAll(RaycastStartPoint+RaycastDirection.normalized*RayDistance, -RaycastDirection, RayDistance, mask, QueryTriggerInteraction.Collide);
+      RaycastHit[] hits = Physics.RaycastAll(RaycastStartPoint + RaycastDirection.normalized * RayDistance, -RaycastDirection, RayDistance, mask, QueryTriggerInteraction.Collide);
       
       if (hits.Length > 0 )
       {
@@ -206,13 +222,19 @@ namespace NearFutureExploration
 
         for (int i = 0; i < hits.Length; i++)
         {
-          //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Hit {0} with distance {1}", hits[i].collider, hits[i].distance));
-          if (hits[i].distance > maxDist)
+          if (hits[i].rigidbody == part.Rigidbody)
+          { }
+          else
           {
-            minHit = hits[i];
-            maxDist = hits[i].distance;
+            //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Hit {0} with distance {1}", hits[i].collider, hits[i].distance));
+            if (hits[i].distance > maxDist)
+            {
+              minHit = hits[i];
+              maxDist = hits[i].distance;
+            }
           }
         }
+        
 
         targetReflector = minHit.collider.gameObject.GetComponentInParent<ModuleDeployableReflector>();
         //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Chose {0}", minHit.collider));
@@ -233,7 +255,10 @@ namespace NearFutureExploration
         }
         if (lineRenderable)
           renderedLine.SetVisibility(true);
-        renderedLine.AdjustSize(RayDistance-minHit.distance);
+        if (minHit.rigidbody == part.Rigidbody)
+          renderedLine.AdjustSize(30f);
+        else
+          renderedLine.AdjustSize(RayDistance-minHit.distance);
         renderedLine.SetColor(badColor);
         return false;
 
