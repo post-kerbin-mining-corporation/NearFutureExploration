@@ -1,0 +1,32 @@
+{
+    "spec_version": "v1.26",
+    "identifier": "NearFutureExploration",
+    "$kref": "#/ckan/spacedock/710",
+    "$vref": "#/ckan/ksp-avc",
+    "name": "Near Future Exploration",
+    "abstract" : "Expands probe selection with new cores, new probe bus parts, mini satellite parts and a large quantity of antennas.",
+    "license": "restricted",
+    "resources": {
+      "homepage": "",
+      "repository": "https://github.com/ChrisAdderley/NearFutureExploration"
+    },
+    "depends": [
+        { "name" : "B9PartSwitch" },
+        { "name" : "ModuleManager" }
+    ],
+    "recommends" : [
+        { "name" : "CommunityTechTree" },
+        { "name" : "ReStock" },
+        { "name" : "ReStockPlus" }
+    ],
+    "suggests" : [
+        { "name" : "NearFutureConstruction" },
+        { "name" : "NearFutureElectrical" },
+        { "name" : "NearFuturePropulsion" },
+        { "name" : "NearFutureSolar" },
+        { "name" : "NearFutureSpacecraft" }
+    ],
+    "install" : [
+        { "find" : "NearFutureExploration", "install_to" : "GameData" }
+    ]
+}
