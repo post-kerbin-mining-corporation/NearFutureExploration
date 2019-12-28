@@ -1,41 +1,46 @@
-v0.1.0
-------
-- Added 8 new probe cores
- - Probodobodyne RND: 0.625m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne DSK: 1.25m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne CYL: 1.875m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne REKT: medium square probe core. Metal, Gold Foil, and Silver Foil variants. 
- - Probodobodyne SQR: large square probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne STP: medum octagonal probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne CHFR: large octagonal probe core. Metal, Gold Foil, and Silver Foil variants.
- - Probodobodyne PLTO: large tetrahedral probe core. Metal, Gold Foil, and Silver Foil variants.
-- Added probe buses - hollow structures
- - ADPT-A: 0.625 to 1.25m cylindrical adapter bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - ADPT-B: 1.25m to 1.875m cylindrical adapter bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - OKTO: OKTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - QBE: QBE footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - HECS: HECS footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - HECS2 : HECS2 footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - RND: RND footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - DSK: DSK footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - CYL: CYL footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - REKT: REKT footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - SQR: SQR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - STP: STP footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - CHFR: CHFR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
- - PLTO: PLTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
-- Added probe-styled multipurpose fuel tanks
- - Tiny radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Tiny stack probe fuel tank: stores LFO, Mono, Xenon by default
- - Small short radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Small medium radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Small long radial probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish short probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish medium probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish long probe fuel tank: stores LFO, Mono, Xenon by default
-- Added small satellite/lander parts
- - Micro CMG: tiny reaction wheel
- - Micro Landing Strut: tiny landing leg
- - Micro Battery: tiny battery
-- Added antennae
- - 
+==============================
+Near Future Exploration v1.3.0
+==============================
+
+============
+DEPENDENCIES
+============
+
+Required:
+- B9PartSwitch (2.10.0)
+- ModuleManager (4.0.2)
+
+Optional
+- Community Tech Tree (v2.2+)
+- Community Resource Pack (1.0.0)
+
+============
+INSTALLATION
+============
+
+To install, place the GameData folder inside your Kerbal Space Program folder. If asked to overwrite files, please do so.
+
+=======
+KSP-AVC
+=======
+
+This mod is compatible with KSP-AVC version checking. For a comprehensive version checking experience, please download the appropriate plugin (http://forum.kerbalspaceprogram.com/threads/79745).
+
+============
+LOCALIZATION
+============
+
+This mod includes localization support, but no translations
+
+=========
+LICENSING
+=========
+
+The art assets in this pack (all .dds, .png and .mu files) are distributed under an All Rights Reserved license. You may not redistribute or re-use these assets without express permission from the author.
+
+Everything else is distributed under the MIT license.
+
+Copyright (c) 2019 Chris Adderley
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
