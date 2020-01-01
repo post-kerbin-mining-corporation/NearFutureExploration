@@ -1,5 +1,5 @@
 ==============================
-Near Future Exploration v1.3.0
+Near Future Exploration v1.0.0
 ==============================
 
 ============
@@ -7,7 +7,7 @@ DEPENDENCIES
 ============
 
 Required:
-- B9PartSwitch (2.10.0)
+- B9PartSwitch (2.12.1)
 - ModuleManager (4.0.2)
 
 Optional
