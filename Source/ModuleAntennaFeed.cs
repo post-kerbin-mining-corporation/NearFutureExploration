@@ -105,15 +105,19 @@ namespace NearFutureExploration
       Fields["StatusString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_Title");
       Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString ");
     }
+    int ticker = 0;
     void FixedUpdate()
     {
-      if (HighLogic.LoadedSceneIsEditor)
-      {
+      ticker++;
+      if (ticker >= 5)
+      { 
+        ticker = 0;
         if (!deployable || (deployable && deployModule.deployState == ModuleDeployablePart.DeployState.EXTENDED))
         {
           if (TestLOSAll(out reflector))
           {
             ApplyReflectorBonus();
+
             Fields["StatusString"].guiActive = true;
             Fields["TargetString"].guiActive = true;
             Fields["StatusString"].guiActiveEditor = true;
