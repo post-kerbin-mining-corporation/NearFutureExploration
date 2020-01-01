@@ -1,5 +1,6 @@
-v0.1.0
+v1.0.0
 ------
+- Initial release
 - Added 8 new probe cores
  - Probodobodyne RND: 0.625m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
  - Probodobodyne DSK: 1.25m cylindrical probe core. Metal, Gold Foil, and Silver Foil variants.
@@ -25,17 +26,44 @@ v0.1.0
  - CHFR: CHFR footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
  - PLTO: PLTO footprint bus. Metal, Gold Foil, Silver Foil and Skeletal surfaces. 
 - Added probe-styled multipurpose fuel tanks
- - Tiny radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Tiny stack probe fuel tank: stores LFO, Mono, Xenon by default
- - Small short radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Small medium radial probe fuel tank: stores LFO, Mono, Xenon by default
- - Small long radial probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish short probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish medium probe fuel tank: stores LFO, Mono, Xenon by default
- - 1.875m-ish long probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-R2 Multipurpose Fuel Tank: Tiny radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-10 Multipurpose Fuel Tank Cluster: Tiny stack probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-R10 Multipurpose Fuel Tank: Small short radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-R20 Multipurpose Fuel Tank: Small medium radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-R40 Multipurpose Fuel Tank: Small long radial probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-240 Multipurpose Fuel Tank Cluster: 1.875m-ish short probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-120 Multipurpose Fuel Tank Cluster: 1.875m-ish medium probe fuel tank: stores LFO, Mono, Xenon by default
+ - MLT-60 Multipurpose Fuel Tank Cluster: 1.875m-ish long probe fuel tank: stores LFO, Mono, Xenon by default
 - Added small satellite/lander parts
  - Micro CMG: tiny reaction wheel
- - Micro Landing Strut: tiny landing leg
- - Micro Battery: tiny battery
-- Added antennae
- - 
+ - LT-9 Nano Landing Leg: tiny landing leg
+ - Z-25 Rechargeable Battery: tiny battery
+- Added new direct antennae
+ - F-DA Relay Antenna Feed: Feeder antenna for reflectors
+ - DR-1 High Gain Antenna: Small, high speed antenna
+ - DR-3 Deployable High Gain Antenna: Small, high speed antenna
+ - D-2 Spot Antenna: Static high power antenna
+ - D-50 Spot Antenna: Static high power antenna with better range
+ - AX-4 Pointable Helical Antenna: Tiny rover antenna, low power, low range
+ - AX-5 Aerial Micro Antenna: Rover antenna, low power, medium range
+ - AX-30 High Gain Antenna: Rover antenna, low power, good range
+- Added new relay antennae
+ - F-RA Relay Antenna Feed: Feeder antenna for reflectors
+ - RA-00-2 Micro-Relay Antenna: Tiny relay for early in system comms
+ - RA-0-8 Relay Antenna: Large deployable relay
+ - RA-5B Advanced Relay Antenna: Larger deployable relay
+ - RA-X1 Phased Relay Antenna: Phased array antenna - high data rate, high power
+ - RA-X2 Phased Relay Antenna: Phased array antenna - high data rate, high power
+ - RA-X3 Phased Relay Antenna: Phased array antenna - high data rate, high power
+ - PH-1 Phased Array Antenna Element: build your own phased array - poor performance alone, but combines well
+ - PH-2 Phased Array Antenna Element: build your own phased array - poor performance alone, but combines well
+ - PH-3 Phased Array Antenna Element: build your own phased array - poor performance alone, but combines well
+- Added new reflector antenna type: Does nothing without another antenna to buff
+ - Buffs antennas pointed at the dish
+ - Most antennas can be buffed but some are better than others (Feeder types are best)
+ - RFL-1 Dish Reflector: Small dish reflector
+ - RFL-2 Medium Dish Reflector: large dish reflector
+ - RFL-3 Dish Reflector Array: cluster of dish reflectors
+ - RFL-50 Large Dish Reflector: large mesh reflector
+ - RFL-100 Giant Dish Reflector: really big dish reflector
+ - RFL-2000 Dish Reflector Array: oh boy oh boy big reflector
