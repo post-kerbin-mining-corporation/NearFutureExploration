@@ -103,7 +103,7 @@ namespace NearFutureExploration
     {
       Events["ToggleVisibility"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Event_ShowPath_Title");
       Fields["StatusString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_Title");
-      Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString ");
+      Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", 0.ToString("F0"));
     }
     int ticker = 0;
     void FixedUpdate()
@@ -133,6 +133,13 @@ namespace NearFutureExploration
         } 
         else
         {
+          if ((deployable && deployModule.deployState != ModuleDeployablePart.DeployState.EXTENDED))
+          {
+            Fields["StatusString"].guiActive = false;
+            Fields["TargetString"].guiActive = false;
+            Fields["StatusString"].guiActiveEditor = false;
+            Fields["TargetString"].guiActiveEditor = false;
+          }
           if (lineRenderable)
             renderedLine.SetVisibility(true);
           renderedLine.AdjustSize(30f);
