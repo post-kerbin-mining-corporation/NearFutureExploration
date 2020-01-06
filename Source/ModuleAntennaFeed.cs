@@ -40,6 +40,30 @@ namespace NearFutureExploration
       renderedLine.SetVisibility(lineRenderable);
     }
 
+    // Toggle Visibility All
+    [KSPEvent(guiActive = false, guiActiveEditor = true, guiName = "Render All Paths")]
+    public void ToggleVisibilityAll()
+    {
+      bool targetState = false;
+      if (!lineRenderable)
+        targetState = true;
+      foreach (Part p in EditorLogic.fetch.ship.Parts)
+      {
+        ModuleAntennaFeed feed = p.GetComponent<ModuleAntennaFeed>();
+        if (feed)
+        {
+          feed.SetVisibility(targetState);
+        }
+      }
+    }
+    
+    public void SetVisibility(bool visibility)
+    {
+      lineRenderable = visibility;
+      renderedLine.SetVisibility(visibility);
+    }
+
+
     Color badColor;
     Color goodColor;
 
@@ -90,8 +114,10 @@ namespace NearFutureExploration
           return part.partTransform.TransformDirection(feedVector);
       }
     }
-    void Start()
+    public override void OnStart(StartState state)
     {
+      base.OnStart(state);
+ 
       feedOffset = ConfigNode.ParseVector3(FeedOffset);
       feedVector = ConfigNode.ParseVector3(FeedVector);
       Localize();
@@ -105,7 +131,20 @@ namespace NearFutureExploration
       Fields["StatusString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_Title");
       Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", 0.ToString("F0"));
     }
+
+    public override void OnWillBeCopied(bool asSymCounterpart)
+    {
+      base.OnWillBeCopied(asSymCounterpart);
+      renderedLine.SetVisibility(false);
+    }
+    public override void OnWasCopied(PartModule copyPartModule, bool asSymCounterpart)
+    {
+      base.OnWasCopied(copyPartModule, asSymCounterpart);
+      renderedLine.SetVisibility(lineRenderable);
+ 
+    }
     int ticker = 0;
+
     void FixedUpdate()
     {
       ticker++;
@@ -147,6 +186,12 @@ namespace NearFutureExploration
         }
       }
     }
+    public void OnDestroy()
+    {
+      if (renderedLine != null)
+        renderedLine.Destroy();
+    }
+
     void SetupFeedPoint()
     {
       if (FeedTransformName != "")

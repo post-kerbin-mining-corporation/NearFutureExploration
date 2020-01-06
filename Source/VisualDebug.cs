@@ -126,6 +126,10 @@ namespace VisualDebugUtils
       axis.SetPosition(0, Vector3.zero);
       axis.SetPosition(1, Vector3.forward * size);
     }
+    public void Destroy()
+    {
+      GameObject.Destroy(xFormHost);
+    }
 
     protected LineRenderer CreateBasicRenderer(string lineName, Transform parent, Vector3[] points, Color color)
     {
