@@ -1,13 +1,13 @@
 {
     "spec_version": "v1.26",
     "identifier": "NearFutureExploration",
-    "$kref": "#/ckan/spacedock/710",
+    "$kref":        "#/ckan/github/ChrisAdderley/NearFutureExploration",
     "$vref": "#/ckan/ksp-avc",
     "name": "Near Future Exploration",
     "abstract" : "Expands probe selection with new cores, new probe bus parts, mini satellite parts and a large quantity of antennas.",
     "license": "restricted",
     "resources": {
-      "homepage": "",
+      "homepage": "https://forum.kerbalspaceprogram.com/index.php?/topic/155465-18x-near-future-technologies-18-updates-november-6th/",
       "repository": "https://github.com/ChrisAdderley/NearFutureExploration"
     },
     "depends": [

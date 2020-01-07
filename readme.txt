@@ -2,13 +2,22 @@
 Near Future Exploration v1.0.0
 ==============================
 
+A set of parts to help enhance and improve the KSP probe experience, particularly in the later game with larger probes
+
+- More Probe Cores: A set of eight new probe cores in medium (1.25m) and larger (1.875m) sizes.
+- Probe Bus Parts: Cargo bay-like parts that match the footprints of most probe cores (stock and NFX). Useful for storing batteries, fuel and the like
+- Probe Fuel Tanks: New multi-fuel probe tanks in stack and radial sizes that are in the vein of the stock Dumpling and Baguette
+- More Direct and Relay Antennae:  More antennae that seamlessly fit into the KSP CommNet system to fill in missing ranges and add more interesting options.
+- Reflector Antennae: A new type of antenna that does nothing on its own, but instead bounces signal from another antenna to amplify its range. Point antenna at a deployed reflector to recieve the bonus. Available in many sizes.
+- Small Probe Parts: A few small probe parts (battery, reaction wheel) to fill out the probe range
+
 ============
 DEPENDENCIES
 ============
 
 Required:
 - B9PartSwitch (2.12.1)
-- ModuleManager (4.0.2)
+- ModuleManager (4.1.3)
 
 Optional
 - Community Tech Tree (v2.2+)
