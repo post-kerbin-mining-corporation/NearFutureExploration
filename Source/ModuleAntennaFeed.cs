@@ -56,7 +56,7 @@ namespace NearFutureExploration
         }
       }
     }
-    
+
     public void SetVisibility(bool visibility)
     {
       lineRenderable = visibility;
@@ -77,7 +77,7 @@ namespace NearFutureExploration
     ModuleDeployableReflector reflector;
     ModuleDataTransmitter baseAntenna;
     ModuleDeployableAntenna deployModule;
-    
+
     bool lineRenderable = true;
     DebugLine renderedLine;
 
@@ -88,12 +88,12 @@ namespace NearFutureExploration
     {
       return Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_PartInfo", (FeedScale*100.0).ToString("F0"));
     }
-    
+
     public override string GetModuleDisplayName()
     {
       return Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_ModuleName");
     }
-      
+
 
     Vector3 RaycastStartPoint
     {
@@ -117,7 +117,7 @@ namespace NearFutureExploration
     public override void OnStart(StartState state)
     {
       base.OnStart(state);
- 
+
       feedOffset = ConfigNode.ParseVector3(FeedOffset);
       feedVector = ConfigNode.ParseVector3(FeedVector);
       Localize();
@@ -141,7 +141,7 @@ namespace NearFutureExploration
     {
       base.OnWasCopied(copyPartModule, asSymCounterpart);
       renderedLine.SetVisibility(lineRenderable);
- 
+
     }
     int ticker = 0;
 
@@ -149,7 +149,7 @@ namespace NearFutureExploration
     {
       ticker++;
       if (ticker >= 5)
-      { 
+      {
         ticker = 0;
         if (!deployable || (deployable && deployModule.deployState == ModuleDeployablePart.DeployState.EXTENDED))
         {
@@ -163,13 +163,14 @@ namespace NearFutureExploration
             Fields["TargetString"].guiActiveEditor = true;
           } else
           {
+            NullReflectorBonus();
             Fields["StatusString"].guiActive = false;
             Fields["TargetString"].guiActive = false;
             Fields["StatusString"].guiActiveEditor = false;
             Fields["TargetString"].guiActiveEditor = false;
           }
-          
-        } 
+
+        }
         else
         {
           if ((deployable && deployModule.deployState != ModuleDeployablePart.DeployState.EXTENDED))
@@ -206,7 +207,7 @@ namespace NearFutureExploration
       {
         Debug.Log("[NearFutureExploration] [ModuleAntennaFeed]: Feed using offset and direction values");
       }
-      
+
     }
     void SetupRenderer()
     {
@@ -261,6 +262,14 @@ namespace NearFutureExploration
       TargetString = Localizer.Format("{0}", reflector.part.partInfo.title);
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
     }
+    public void NullReflectorBonus()
+    {
+      baseAntenna.antennaPower = baseAntennaRange;
+
+      StatusString = "";
+      TargetString = "";
+      //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
+    }
     public bool TestLOSAll(out ModuleDeployableReflector targetReflector)
     {
       targetReflector = null;
@@ -268,7 +277,7 @@ namespace NearFutureExploration
 
       // Cast the ray!
       RaycastHit[] hits = Physics.RaycastAll(RaycastStartPoint + RaycastDirection.normalized * RayDistance, -RaycastDirection, RayDistance, mask, QueryTriggerInteraction.Collide);
-      
+
       if (hits.Length > 0 )
       {
         //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Num Hits {0}", hits.Length));
@@ -290,7 +299,7 @@ namespace NearFutureExploration
             }
           }
         }
-        
+
 
         targetReflector = minHit.collider.gameObject.GetComponentInParent<ModuleDeployableReflector>();
         //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Chose {0}", minHit.collider));
@@ -307,7 +316,7 @@ namespace NearFutureExploration
               return true;
             }
           }
-          
+
         }
         if (lineRenderable)
           renderedLine.SetVisibility(true);

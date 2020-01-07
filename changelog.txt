@@ -1,3 +1,9 @@
+v1.0.1
+------
+- Reduced mass of Micro CMG to 0.01 from 0.05t
+- Fixed a model issue on the RA-X1 relay antenna
+- Fixed an issue where reflector buffs would not be removed when a reflector was retracted.
+
 v1.0.0
 ------
 - Initial release
