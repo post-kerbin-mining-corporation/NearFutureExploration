@@ -1,3 +1,13 @@
+v1.0.1
+------
+- Reduced mass of Micro CMG to 0.01 from 0.05t
+- Fixed base range of both dedicated feeder antennae being far too high
+- Fixed a number of antennae and all reflectors having physics disabled
+- Fixed a piston animation issue on the RA-X1 relay antenna
+- Fixed an issue where reflector buffs would not be removed when a reflector was retracted.
+- Fixed some UI oddities with reflectors PAW fields
+- Fixed reflectors not augmenting antennae when unfocused. 
+
 v1.0.0
 ------
 - Initial release

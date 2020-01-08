@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModuleAntennaFeed.cs" />
+    <Compile Include="ModuleDataTransmitterFeedable.cs" />
     <Compile Include="ModuleDeployableReflector.cs" />
     <Compile Include="ModuleForceSkinnedMeshLOD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
