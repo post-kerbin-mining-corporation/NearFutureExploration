@@ -75,13 +75,13 @@ namespace NearFutureExploration
     public double baseAntennaRange;
 
     ModuleDeployableReflector reflector;
-    ModuleDataTransmitter baseAntenna;
+    ModuleDataTransmitterFeedeable baseAntenna;
     ModuleDeployableAntenna deployModule;
 
     bool lineRenderable = true;
     DebugLine renderedLine;
 
-    public ModuleDataTransmitter Antenna { get { return baseAntenna; } }
+    public ModuleDataTransmitterFeedeable Antenna { get { return baseAntenna; } }
 
     // Info for ui
     public override string GetInfo()
@@ -114,10 +114,8 @@ namespace NearFutureExploration
           return part.partTransform.TransformDirection(feedVector);
       }
     }
-    public override void OnStart(StartState state)
+    public void Start()
     {
-      base.OnStart(state);
-
       feedOffset = ConfigNode.ParseVector3(FeedOffset);
       feedVector = ConfigNode.ParseVector3(FeedVector);
       Localize();
@@ -129,7 +127,7 @@ namespace NearFutureExploration
     {
       Events["ToggleVisibility"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Event_ShowPath_Title");
       Fields["StatusString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_Title");
-      Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", 0.ToString("F0"));
+      Fields["TargetString"].guiName = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorName_Title");
     }
 
     public override void OnWillBeCopied(bool asSymCounterpart)
@@ -159,13 +157,16 @@ namespace NearFutureExploration
 
             Fields["StatusString"].guiActive = true;
             Fields["TargetString"].guiActive = true;
+
             Fields["StatusString"].guiActiveEditor = true;
             Fields["TargetString"].guiActiveEditor = true;
           } else
           {
             NullReflectorBonus();
+
             Fields["StatusString"].guiActive = false;
             Fields["TargetString"].guiActive = false;
+
             Fields["StatusString"].guiActiveEditor = false;
             Fields["TargetString"].guiActiveEditor = false;
           }
@@ -175,8 +176,10 @@ namespace NearFutureExploration
         {
           if ((deployable && deployModule.deployState != ModuleDeployablePart.DeployState.EXTENDED))
           {
+            NullReflectorBonus();
             Fields["StatusString"].guiActive = false;
             Fields["TargetString"].guiActive = false;
+
             Fields["StatusString"].guiActiveEditor = false;
             Fields["TargetString"].guiActiveEditor = false;
           }
@@ -240,7 +243,7 @@ namespace NearFutureExploration
     }
     void FindAntenna()
     {
-      baseAntenna = part.GetComponent<ModuleDataTransmitter>();
+      baseAntenna = part.GetComponent<ModuleDataTransmitterFeedeable>();
       deployModule = part.GetComponent<ModuleDeployableAntenna>();
       if (baseAntenna == null)
       {
@@ -256,10 +259,10 @@ namespace NearFutureExploration
     }
     public void ApplyReflectorBonus()
     {
-      baseAntenna.antennaPower = baseAntennaRange + reflector.GetReflectorBonus()*FeedScale;
-
+      baseAntenna.antennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
+      baseAntenna.savedAntennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
       StatusString = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", (reflector.GetReflectorBonus() * FeedScale).ToString("F0"));
-      TargetString = Localizer.Format("{0}", reflector.part.partInfo.title);
+      TargetString = Localizer.Format("<<1>>", reflector.part.partInfo.title);
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
     }
     public void NullReflectorBonus()
@@ -287,11 +290,12 @@ namespace NearFutureExploration
 
         for (int i = 0; i < hits.Length; i++)
         {
+          //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Hit {0} with distance {1}", hits[i].collider, hits[i].distance));
           if (hits[i].rigidbody == part.Rigidbody)
           { }
           else
           {
-            //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Hit {0} with distance {1}", hits[i].collider, hits[i].distance));
+           
             if (hits[i].distance > maxDist)
             {
               minHit = hits[i];
@@ -299,7 +303,6 @@ namespace NearFutureExploration
             }
           }
         }
-
 
         targetReflector = minHit.collider.gameObject.GetComponentInParent<ModuleDeployableReflector>();
         //Debug.Log(String.Format("[NearFutureExploration] [ModuleAntennaFeed]: Chose {0}", minHit.collider));
