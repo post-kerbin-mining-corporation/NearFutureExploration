@@ -295,7 +295,7 @@ namespace NearFutureExploration
           { }
           else
           {
-           
+
             if (hits[i].distance > maxDist)
             {
               minHit = hits[i];

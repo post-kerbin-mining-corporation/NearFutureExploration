@@ -1,3 +1,10 @@
+v1.0.2
+------
+- Fixed MLT-10 RCS fuel option containing LFO instead of monopropellant
+- FeedScale of most feeder antennas tuned: 75% efficiency -> 90%, 60% -> 75%
+- Fixed a localization issue with the VAB info display for ModuleDeployableReflector
+
+
 v1.0.1
 ------
 - Reduced mass of Micro CMG to 0.01 from 0.05t
@@ -6,7 +13,7 @@ v1.0.1
 - Fixed a piston animation issue on the RA-X1 relay antenna
 - Fixed an issue where reflector buffs would not be removed when a reflector was retracted.
 - Fixed some UI oddities with reflectors PAW fields
-- Fixed reflectors not augmenting antennae when unfocused. 
+- Fixed reflectors not augmenting antennae when unfocused.
 
 v1.0.0
 ------
