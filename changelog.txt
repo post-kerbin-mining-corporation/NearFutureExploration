@@ -3,6 +3,7 @@ v1.0.2
 - Fixed MLT-10 RCS fuel option containing LFO instead of monopropellant
 - FeedScale of most feeder antennas tuned: 75% efficiency -> 90%, 60% -> 75%
 - Fixed a localization issue with the VAB info display for ModuleDeployableReflector
+- Fixed large CHFR bus' silver foil texture
 
 
 v1.0.1
