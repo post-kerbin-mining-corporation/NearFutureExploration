@@ -248,6 +248,7 @@ namespace NearFutureExploration
       if (baseAntenna == null)
       {
         Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Could not find an antenna module for use as feeder");
+        return;
       }
       if (deployModule != null)
       {
@@ -267,14 +268,18 @@ namespace NearFutureExploration
     }
     public void NullReflectorBonus()
     {
-      baseAntenna.antennaPower = baseAntennaRange;
-
       StatusString = "";
       TargetString = "";
+
+      if(baseAntenna == null) return;
+
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
+      baseAntenna.antennaPower = baseAntennaRange;
     }
     public bool TestLOSAll(out ModuleDeployableReflector targetReflector)
     {
+      if(baseAntenna == null) return false; // early return
+
       targetReflector = null;
       LayerMask mask = 1 << LayerMask.NameToLayer("Default");
 
