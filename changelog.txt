@@ -1,3 +1,9 @@
+v1.0.3
+------
+- Fixed another localization issue with the VAB info display for ModuleDeployableReflector
+- Changed the way antenna feeds are patched
+- Excluded all antenna patching when either RemoteTech or RealAntennas are installed
+
 v1.0.2
 ------
 - Fixed MLT-10 RCS fuel option containing LFO instead of monopropellant
