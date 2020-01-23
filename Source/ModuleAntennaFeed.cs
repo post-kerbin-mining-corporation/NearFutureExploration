@@ -146,7 +146,7 @@ namespace NearFutureExploration
     void FixedUpdate()
     {
       ticker++;
-      if (ticker >= 5)
+      if (baseAntenna != null && ticker >= 5)
       {
         ticker = 0;
         if (!deployable || (deployable && deployModule.deployState == ModuleDeployablePart.DeployState.EXTENDED))
@@ -216,14 +216,13 @@ namespace NearFutureExploration
     {
       if (HighLogic.LoadedSceneIsEditor)
       {
-        lineRenderable = true;
+        lineRenderable = false;
       } else
       {
         lineRenderable = false;
       }
 
-      goodColor = new Color(0f, 1f, 0f, .5f);
-
+      goodColor = new Color(0f, 1f, 1f, .5f);
       badColor = new Color(1f, 0f, 0f, .5f);
 
       renderedLine = new DebugLine(1f, badColor);
@@ -248,12 +247,16 @@ namespace NearFutureExploration
       if (baseAntenna == null)
       {
         Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Could not find an antenna module for use as feeder");
-      }
-      if (deployModule != null)
+
+      } else
       {
-        Debug.Log("[NearFutureExploration] [ModuleAntennaFeed]: Feed is deployable");
-        deployable = true;
+        if (deployModule != null)
+        {
+          Debug.Log("[NearFutureExploration] [ModuleAntennaFeed]: Feed is deployable");
+          deployable = true;
+        }
       }
+      
 
       baseAntennaRange = baseAntenna.antennaPower;
     }
@@ -295,7 +298,7 @@ namespace NearFutureExploration
           { }
           else
           {
-           
+
             if (hits[i].distance > maxDist)
             {
               minHit = hits[i];

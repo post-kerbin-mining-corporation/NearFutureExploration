@@ -17,7 +17,7 @@ namespace NearFutureExploration
 
     public override void OnAwake()
     {
-      savedAntennaPower = antennaPower;
+      savedAntennaPower = antennaPower ;
       base.OnAwake();
     }
 

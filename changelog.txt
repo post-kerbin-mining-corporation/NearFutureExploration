@@ -1,3 +1,28 @@
+v1.0.3
+------
+- Fixed another localization issue with the VAB info display for ModuleDeployableReflector
+- Changed the way antenna feeds are patched
+- Fixed a localization error in the PLTO core description
+- Fixed a typo in the RFL-2000 description
+- Excluded all antenna patching when either RemoteTech or RealAntennas are installed
+- Some adjustments to more gracefully handle failing feed things
+- Antenna feed line 'good' color is now cyan
+- Antenna feed lines are not turned on by default in the VAB
+
+
+v1.0.2
+------
+- Fixed MLT-10 RCS fuel option containing LFO instead of monopropellant
+- FeedScale of most feeder antennas tuned: 75% efficiency -> 90%, 60% -> 75%
+- Pushed up the ranges for the smaller side reflectors by ~5-10%
+- Upped the range for phased array antennae by 10x
+- Tweaked tech locations for a number of the weaker antennae (on average, 1 tier lower)
+- Fixed a localization issue with the VAB info display for ModuleDeployableReflector
+- Fixed a localization error with the PLTO core description
+- Adjusted the shader settings of some probe cores to match with each other better
+- Fixed large CHFR bus' silver foil texture
+- Fixed a missing texture reference in some probe normal maps
+
 v1.0.1
 ------
 - Reduced mass of Micro CMG to 0.01 from 0.05t
@@ -6,7 +31,7 @@ v1.0.1
 - Fixed a piston animation issue on the RA-X1 relay antenna
 - Fixed an issue where reflector buffs would not be removed when a reflector was retracted.
 - Fixed some UI oddities with reflectors PAW fields
-- Fixed reflectors not augmenting antennae when unfocused. 
+- Fixed reflectors not augmenting antennae when unfocused.
 
 v1.0.0
 ------
