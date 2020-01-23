@@ -2,7 +2,13 @@ v1.0.3
 ------
 - Fixed another localization issue with the VAB info display for ModuleDeployableReflector
 - Changed the way antenna feeds are patched
+- Fixed a localization error in the PLTO core description
+- Fixed a typo in the RFL-2000 description
 - Excluded all antenna patching when either RemoteTech or RealAntennas are installed
+- Some adjustments to more gracefully handle failing feed things
+- Antenna feed line 'good' color is now cyan
+- Antenna feed lines are not turned on by default in the VAB
+
 
 v1.0.2
 ------
