@@ -7,8 +7,9 @@ v1.0.3
 - Excluded all antenna patching when either RemoteTech or RealAntennas are installed
 - Some adjustments to more gracefully handle failing feed things
 - Antenna feed line 'good' color is now cyan
-- Antenna feed lines are not turned on by default in the VAB
-
+- Antenna feed lines are now not turned on by default in the VAB
+- Rotated most probe cores by 180 degrees to match initial convention
+- Rotated PLTO cores and bus by -150 degrees, this will affect craft but obeys the above convention
 
 v1.0.2
 ------
