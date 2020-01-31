@@ -19,12 +19,12 @@ namespace NearFutureExploration
     // Info for ui
     public override string GetModuleDisplayName()
     {
-      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_ModuleName", (AddedRange * 100.0).ToString("F0"));
+      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_ModuleName");
     }
 
     public override string GetInfo()
     {
-      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_PartInfo");
+      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_PartInfo", (AddedRange * 100.0).ToString("F0"));
     }
 
     public List<Collider> dishColliders;
