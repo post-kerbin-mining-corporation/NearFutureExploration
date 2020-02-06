@@ -1,3 +1,10 @@
+v1.0.4
+------
+- Reflector range extension is now done with SI prefixes (eg 5G, 10T, etc) instead of many zeroes
+- Reduced mass of nano landing legs to 5kg from 15 kg
+- Fixed the surface attach node of the RFL100 Giant Dish Reflector
+- Fixed the normal map on the RND probe core's silver variant
+
 v1.0.3
 ------
 - Fixed another localization issue with the VAB info display for ModuleDeployableReflector

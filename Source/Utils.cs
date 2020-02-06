@@ -7,30 +7,53 @@ using System.Collections.Generic;
 
 namespace NearFutureExploration
 {
-    internal static class Utils
-    {
+  internal static class Utils
+  {
 
        
-        // This function loads up some animationstates
-        public static AnimationState[] SetUpAnimation(string animationName, Part part)
-        {
-            var states = new List<AnimationState>();
-            foreach (var animation in part.FindModelAnimators(animationName))
-            {
-                var animationState = animation[animationName];
-                animationState.speed = 0;
-                animationState.enabled = true;
-                // Clamp this or else weird things happen
-                animationState.wrapMode = WrapMode.ClampForever;
-                animation.Blend(animationName);
-                states.Add(animationState);
-            }
-            // Convert 
-            return states.ToArray();
-        }
+    // This function loads up some animationstates
+    public static AnimationState[] SetUpAnimation(string animationName, Part part)
+    {
+      var states = new List<AnimationState>();
+      foreach (var animation in part.FindModelAnimators(animationName))
+      {
+          var animationState = animation[animationName];
+          animationState.speed = 0;
+          animationState.enabled = true;
+          // Clamp this or else weird things happen
+          animationState.wrapMode = WrapMode.ClampForever;
+          animation.Blend(animationName);
+          states.Add(animationState);
+      }
+      // Convert 
+      return states.ToArray();
+    }
+    public static string ToSI(double d, string format = null)
+    {
+      if (d == 0.0)
+        return d.ToString(format);
 
-        // Returns true if ship is it atmoshpere
-        public static bool VesselInAtmosphere(Vessel vessel)
+      char[] incPrefixes = new[] { 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y' };
+      char[] decPrefixes = new[] { 'm', '\u03bc', 'n', 'p', 'f', 'a', 'z', 'y' };
+
+      int degree = Mathf.Clamp((int)Math.Floor(Math.Log10(Math.Abs(d)) / 3), -8, 8);
+      if (degree == 0)
+        return d.ToString(format) + " ";
+
+      double scaled = d * Math.Pow(1000, -degree);
+
+      char? prefix = null;
+
+      switch (Math.Sign(degree))
+      {
+        case 1: prefix = incPrefixes[degree - 1]; break;
+        case -1: prefix = decPrefixes[-degree - 1]; break;
+      }
+
+      return scaled.ToString(format) + " " + prefix;
+    }
+    // Returns true if ship is it atmoshpere
+    public static bool VesselInAtmosphere(Vessel vessel)
         {
             if (vessel.atmDensity > 0d)
                 return true;

@@ -264,7 +264,7 @@ namespace NearFutureExploration
     {
       baseAntenna.antennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
       baseAntenna.savedAntennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
-      StatusString = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", (reflector.GetReflectorBonus() * FeedScale).ToString("F0"));
+      StatusString = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", Utils.ToSI(reflector.GetReflectorBonus() * FeedScale, "F0"));
       TargetString = Localizer.Format("<<1>>", reflector.part.partInfo.title);
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
     }
