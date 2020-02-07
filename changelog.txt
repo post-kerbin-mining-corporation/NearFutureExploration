@@ -1,5 +1,6 @@
 v1.0.4
 ------
+- Fixed an issue where antenna reflector range was multiplied by 100 in the VAB info
 - Reflector range extension is now done with SI prefixes (eg 5G, 10T, etc) instead of many zeroes
 - Reduced mass of nano landing legs to 5kg from 15 kg
 - Fixed the surface attach node of the RFL100 Giant Dish Reflector

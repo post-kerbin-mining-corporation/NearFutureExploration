@@ -24,7 +24,7 @@ namespace NearFutureExploration
 
     public override string GetInfo()
     {
-      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_PartInfo", Utils.ToSI(AddedRange * 100.0,"F0"));
+      return Localizer.Format("#LOC_NFEX_ModuleDeployableReflector_PartInfo", Utils.ToSI(AddedRange,"F0"));
     }
 
     public List<Collider> dishColliders;
