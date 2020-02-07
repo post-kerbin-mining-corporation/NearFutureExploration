@@ -5,6 +5,7 @@ v1.0.4
 - Reduced mass of nano landing legs to 5kg from 15 kg
 - Fixed the surface attach node of the RFL100 Giant Dish Reflector
 - Fixed the normal map on the RND probe core's silver variant
+- Fixed identical masses of all three phased arrays
 
 v1.0.3
 ------
