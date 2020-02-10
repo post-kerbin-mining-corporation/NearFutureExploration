@@ -1,3 +1,12 @@
+v1.0.4
+------
+- Fixed an issue where antenna reflector range was multiplied by 100 in the VAB info
+- Reflector range extension is now done with SI prefixes (eg 5G, 10T, etc) instead of many zeroes
+- Reduced mass of nano landing legs to 5kg from 15 kg
+- Fixed the surface attach node of the RFL100 Giant Dish Reflector
+- Fixed the normal map on the RND probe core's silver variant
+- Fixed identical masses of all three phased arrays
+
 v1.0.3
 ------
 - Fixed another localization issue with the VAB info display for ModuleDeployableReflector
@@ -7,8 +16,9 @@ v1.0.3
 - Excluded all antenna patching when either RemoteTech or RealAntennas are installed
 - Some adjustments to more gracefully handle failing feed things
 - Antenna feed line 'good' color is now cyan
-- Antenna feed lines are not turned on by default in the VAB
-
+- Antenna feed lines are now not turned on by default in the VAB
+- Rotated most probe cores by 180 degrees to match initial convention
+- Rotated PLTO cores and bus by -150 degrees, this will affect craft but obeys the above convention
 
 v1.0.2
 ------
