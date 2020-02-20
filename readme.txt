@@ -1,5 +1,5 @@
 ==============================
-Near Future Exploration v1.0.4
+Near Future Exploration v1.0.5
 ==============================
 
 A set of parts to help enhance and improve the KSP probe experience, particularly in the later game with larger probes
