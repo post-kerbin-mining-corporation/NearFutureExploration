@@ -1,3 +1,7 @@
+v1.0.6
+------
+- Fixed backwards RT patch removing feed features when RT NOT installed vs installed
+
 v1.0.5
 ------
 - Marked compatible for KSP 1.9+
