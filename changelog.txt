@@ -1,3 +1,14 @@
+v1.0.6
+------
+- Fixed backwards RT patch removing feed features when RT NOT installed vs installed
+
+v1.0.5
+------
+- Marked compatible for KSP 1.9+
+- Updated bundled B9PartSwitch to 2.13.0
+- Fixed an issue where the PLTO and PLTO Compact buses had components (colliders, endcaps) rotated by 150 degrees 
+- Disabled more things when RemoteTech or RealAntennas are installed. 
+
 v1.0.4
 ------
 - Fixed an issue where antenna reflector range was multiplied by 100 in the VAB info
