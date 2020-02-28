@@ -26,14 +26,14 @@ namespace NearFutureExploration
     [KSPField(isPersistant = false)]
     public float RayDistance = 500f;
 
-    [KSPField(isPersistant = false, guiActive = true, guiName = "Reflector Buff")]
+    [KSPField(isPersistant = false, guiActive = true, guiName = "#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_Title")]//Reflector Buff
     public string StatusString;
 
-    [KSPField(isPersistant = false, guiActive = true, guiName = "Using Reflector")]
+    [KSPField(isPersistant = false, guiActive = true, guiName = "#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorName_Title")]//Using Reflector
     public string TargetString;
 
     // Toggle Visibility
-    [KSPEvent(guiActive = false, guiActiveEditor = true, guiName = "Render Antenna Path")]
+    [KSPEvent(guiActive = false, guiActiveEditor = true, guiName = "#LOC_NFEX_ModuleAntennaFeed_Event_ShowPath_Title")]//Render Antenna Path
     public void ToggleVisibility()
     {
       lineRenderable = !lineRenderable;
@@ -41,7 +41,7 @@ namespace NearFutureExploration
     }
 
     // Toggle Visibility All
-    [KSPEvent(guiActive = false, guiActiveEditor = true, guiName = "Render All Paths")]
+    [KSPEvent(guiActive = false, guiActiveEditor = true, guiName = "#LOC_NFEX_ModuleAntennaFeed_Event_ShowAllPath_Title")]//Render All Paths
     public void ToggleVisibilityAll()
     {
       bool targetState = false;
