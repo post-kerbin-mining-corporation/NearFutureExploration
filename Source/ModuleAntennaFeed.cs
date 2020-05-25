@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using KSP.Localization;
 using VisualDebugUtils;
+using System.Reflection;
 
 namespace NearFutureExploration
 {
@@ -77,6 +78,7 @@ namespace NearFutureExploration
     ModuleDeployableReflector reflector;
     ModuleDataTransmitterFeedeable baseAntenna;
     ModuleDeployableAntenna deployModule;
+    PartModule RTAntennaPartModule;
 
     bool lineRenderable = true;
     DebugLine renderedLine;
@@ -146,7 +148,7 @@ namespace NearFutureExploration
     void FixedUpdate()
     {
       ticker++;
-      if (baseAntenna != null && ticker >= 5)
+      if ((baseAntenna != null || RTAntennaPartModule != null) && ticker >= 5)
       {
         ticker = 0;
         if (!deployable || (deployable && deployModule.deployState == ModuleDeployablePart.DeployState.EXTENDED))
@@ -244,34 +246,77 @@ namespace NearFutureExploration
     {
       baseAntenna = part.GetComponent<ModuleDataTransmitterFeedeable>();
       deployModule = part.GetComponent<ModuleDeployableAntenna>();
-      if (baseAntenna == null)
+      if (baseAntenna != null)
       {
-        Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Could not find an antenna module for use as feeder");
-
-      } else
+        baseAntennaRange = baseAntenna.antennaPower;
+      }
+      else
       {
-        if (deployModule != null)
+        RTAntennaPartModule = part.Modules.Contains("ModuleRTAntenna") ? part.Modules["ModuleRTAntenna"] : null;
+        if (RTAntennaPartModule != null)
         {
-          Debug.Log("[NearFutureExploration] [ModuleAntennaFeed]: Feed is deployable");
-          deployable = true;
+          try
+          {
+            FieldInfo fi = RTAntennaPartModule.GetType().GetField("Mode1DishRange");
+            baseAntennaRange = (float)(fi.GetValue(RTAntennaPartModule));
+          }
+          catch (Exception e)
+          {
+            Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Mismatched RemoteTech antenna module");
+          }
+        }
+        else
+        {
+          Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Could not find an antenna module for use as feeder");
         }
       }
-      
-
-      baseAntennaRange = baseAntenna.antennaPower;
+      if (deployModule != null)
+      {
+        Debug.Log("[NearFutureExploration] [ModuleAntennaFeed]: Feed is deployable");
+        deployable = true;
+      }
     }
     public void ApplyReflectorBonus()
     {
-      baseAntenna.antennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
-      baseAntenna.savedAntennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
+      if (baseAntenna != null)
+      {
+        baseAntenna.antennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
+        baseAntenna.savedAntennaPower = baseAntennaRange + reflector.GetReflectorBonus() * FeedScale;
+      }
+      else
+      {
+        try
+        {
+          FieldInfo fi = RTAntennaPartModule.GetType().GetField("Mode1DishRange");
+          fi.SetValue(RTAntennaPartModule, (float)(baseAntennaRange + reflector.GetReflectorBonus() * FeedScale));
+        }
+        catch (Exception e)
+        {
+          Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Mismatched RemoteTech antenna module");
+        }
+      }
       StatusString = Localizer.Format("#LOC_NFEX_ModuleAntennaFeed_Field_ReflectorBuff_StatusString", Utils.ToSI(reflector.GetReflectorBonus() * FeedScale, "F0"));
       TargetString = Localizer.Format("<<1>>", reflector.part.partInfo.title);
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
     }
     public void NullReflectorBonus()
     {
-      baseAntenna.antennaPower = baseAntennaRange;
-
+      if (baseAntenna != null)
+      {
+        baseAntenna.antennaPower = baseAntennaRange;
+      }
+      else
+      {
+        try
+        {
+          FieldInfo fi = RTAntennaPartModule.GetType().GetField("Mode1DishRange");
+          fi.SetValue(RTAntennaPartModule, (float)baseAntennaRange);
+        }
+        catch (Exception e)
+        {
+          Debug.LogError("[NearFutureExploration] [ModuleAntennaFeed]: Mismatched RemoteTech antenna module");
+        }
+      }
       StatusString = "";
       TargetString = "";
       //baseAntenna.powerText = String.Format(baseAntenna.antennaPower);
