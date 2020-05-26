@@ -1,3 +1,10 @@
+v1.0.7
+------
+- Updated bundled B9PartSwitch to 2.16.0
+- RemoteTech compatiblity! (thanks TaxiService!)
+- Chinese localization (tinygrox)
+- Fixed an issue with the tiny tiny tank that had negative mass when loaded with LH2
+
 v1.0.6
 ------
 - Fixed backwards RT patch removing feed features when RT NOT installed vs installed
