@@ -24,8 +24,8 @@ A set of parts to help enhance and improve the KSP probe experience, particularl
 
 ### Required
 These components are required for the mod to function and are bundled as part of any download:
-* [ModuleManager (4.1.3)](https://github.com/sarbian/ModuleManager)
-* [B9PartSwitch (2.13.0)](https://github.com/blowfishpro/B9PartSwitch)
+* [ModuleManager (4.1.4)](https://github.com/sarbian/ModuleManager)
+* [B9PartSwitch (2.17.0)](https://github.com/blowfishpro/B9PartSwitch)
 
 ### Optional
 These components are optional but can add to the play experience
