@@ -123,8 +123,10 @@ namespace VisualDebugUtils
 
     public void AdjustSize(float size)
     {
-      axis.SetPosition(0, Vector3.zero);
-      axis.SetPosition(1, Vector3.forward * size);
+      if (axis.positionCount > 0)
+        axis.SetPosition(0, Vector3.zero);
+      if (axis.positionCount > 1)
+        axis.SetPosition(1, Vector3.forward * size);
     }
     public void Destroy()
     {

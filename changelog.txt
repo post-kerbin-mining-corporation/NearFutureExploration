@@ -1,3 +1,7 @@
+v1.0.10
+-------
+- Fixed an issue where broken antennas would cause NREs
+
 v1.0.9
 ------
 - Marked compatible for KSP 1.10+

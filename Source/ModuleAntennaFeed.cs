@@ -185,10 +185,13 @@ namespace NearFutureExploration
             Fields["StatusString"].guiActiveEditor = false;
             Fields["TargetString"].guiActiveEditor = false;
           }
-          if (lineRenderable)
-            renderedLine.SetVisibility(true);
-          renderedLine.AdjustSize(30f);
-          renderedLine.SetColor(badColor);
+          if (HighLogic.LoadedSceneIsEditor)
+          {
+            if (lineRenderable)
+              renderedLine.SetVisibility(true);
+            renderedLine.AdjustSize(30f);
+            renderedLine.SetColor(badColor);
+          }
         }
       }
     }
