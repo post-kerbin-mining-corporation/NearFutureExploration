@@ -1,7 +1,7 @@
 {
     "spec_version": "v1.26",
     "identifier": "NearFutureExploration",
-    "$kref":        "#/ckan/github/ChrisAdderley/NearFutureExploration",
+    "$kref":        "#/ckan/github/post-kerbin-mining-corporation/NearFutureExploration",
     "$vref": "#/ckan/ksp-avc",
     "name": "Near Future Exploration",
     "author": "Nertea",
@@ -9,7 +9,7 @@
     "license": "restricted",
     "resources": {
       "homepage": "https://forum.kerbalspaceprogram.com/index.php?/topic/155465-18x-near-future-technologies-18-updates-november-6th/",
-      "repository": "https://github.com/ChrisAdderley/NearFutureExploration"
+      "repository": "https://github.com/post-kerbin-mining-corporation/NearFutureExploration"
     },
     "depends": [
         { "name" : "B9PartSwitch" },

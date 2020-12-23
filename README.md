@@ -33,7 +33,7 @@ These components are optional but can add to the play experience
 * [ReStock](https://github.com/PorktoberRevolution/ReStocked/): Redoes most of KSP's art to be consistent. This pack targets ReStock's art style.
 * [ReStock+](https://github.com/PorktoberRevolution/ReStocked/): Adds more useful parts, like mini RCS thrusters.
 * [Community Resouce Pack](https://github.com/BobPalmer/CommunityResourcePack): Allows probe tanks to contain more resources
-* [Community Tech Tree](https://github.com/ChrisAdderley/CommunityTechTree): Places highest-tech antennae and probes in higher tech nodes
+* [Community Tech Tree](https://github.com/post-kerbin-mining-corporation/CommunityTechTree): Places highest-tech antennae and probes in higher tech nodes
 
 ## Installation
 
