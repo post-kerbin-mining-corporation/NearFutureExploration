@@ -1,3 +1,8 @@
+v1.1.2
+------
+- KSP 1.12
+- Updated bundled B9PartSwitch to 2.18.0
+
 v1.1.1
 ------
 - Fixed cargo storeable parts in 1.10
