@@ -4,7 +4,7 @@
     "$kref":        "#/ckan/github/post-kerbin-mining-corporation/NearFutureExploration",
     "$vref": "#/ckan/ksp-avc",
     "name": "Near Future Exploration",
-    "author": "Nertea",
+    "author": "Nertea (Chris Adderley)",
     "abstract" : "Expands probe selection with new cores, new probe bus parts, mini satellite parts and a large quantity of antennas.",
     "license": "restricted",
     "resources": {
