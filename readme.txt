@@ -1,5 +1,5 @@
 ==============================
-Near Future Exploration v1.1.2
+Near Future Exploration v1.1.3
 ==============================
 
 A set of parts to help enhance and improve the KSP probe experience, particularly in the later game with larger probes
@@ -16,8 +16,8 @@ DEPENDENCIES
 ============
 
 Required:
-- B9PartSwitch (2.18.0)
-- ModuleManager (4.1.4)
+- B9PartSwitch (2.20.0)
+- ModuleManager (4.2.3)
 
 Optional
 - Community Tech Tree (v2.2+)
